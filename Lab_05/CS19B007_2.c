@@ -5,7 +5,7 @@
 int main(){
   struct timeval start;
   struct timeval end;
-  //Gettimeofday is called before initialising A and B, because it the initialisation will be counted in the perf command
+//Gettimeofday is called before initialising A and B, because it the initialisation will be counted in the perf command
   gettimeofday(&start,NULL);
   int** A = (int**)malloc(1024*sizeof(int*));
   int** B = (int**)malloc(1024*sizeof(int*));
@@ -19,14 +19,14 @@ int main(){
   for(i=0;i<1024;i++){
     for(j=0;j<1024;j++){
       A[i][j] = 1;
-      B[i][j] = 2;
+      B[j][i] = 2;
       C[i][j] = 0;
     }
   }
   for(i=0;i<1024;i++){
     for(j=0;j<1024;j++){
       for(k=0;k<1024;k++){
-        C[i][j] += A[i][k]*B[k][j];
+        C[i][j] += A[i][k]*B[j][k];
       }
     }
   }

@@ -66,21 +66,22 @@ parent:
 stack_push:
     mov             EAX,[EBX + ECX]
     and             EAX,0h0f                    ;taking first digit of EAX
-    push            EAX
+    push            EAX                         ;pushes the digits in stack 
     inc             ECX
     cmp             ECX,EDX
     jl              stack_push
+    mov             EAX,7                       ;syscall for waitpid
+    mov             EBX,0                       ;(ie) waits for the child to end...
+    mov             EDX,0                       ;..before printing the reversed number
+    int             0x80
     mov             ECX,0
     mov             EAX,0
 stack_pop:
-    mov             EBX,10
-    mul             EBX                         ;EAX = EAX*10 + popped digit
-    pop             EBX
-    add             EAX,EBX
+    pop             EBX                         ;pop the digits from stack so they will be in...
+    PutLInt         EBX                         ;...reversed order 
     inc             ECX
     cmp             ECX,[num_size]
     jl              stack_pop
-    PutLInt         EAX
     nwln
     jmp             done
 
@@ -126,7 +127,7 @@ is_prime:
     mov             EAX,0
     PutLInt         EAX
     nwln
-   jmp             done
+    jmp             done
 not_prime:
     mov             EAX,1
     PutLInt         EAX

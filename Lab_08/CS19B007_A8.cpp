@@ -6,9 +6,9 @@ using namespace std;
 
 /*
 TEAM MEMBERS :
+    cs19b007 - Aswin Ramesh	
     cs18b053 - B Sai Chaitanya
     cs18b022 - K V Pradeep Reddy
-    cs19b007 - Aswin Ramesh
 */
 
 string HexToBinary(string hex){
@@ -31,7 +31,7 @@ string HexToBinary(string hex){
         else if(hex[i] == 'e') bin += "1110";
         else if(hex[i] == 'f') bin += "1111";
     }
-    return (bin);
+    return (bin)
 }
 
 string BinaryToHex(string bin){

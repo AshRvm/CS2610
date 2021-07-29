@@ -10,3 +10,9 @@ Replacement policies:
 - Random 
 - Least Recently Used (LRU)
 - Tree-based Pseudo Least Recently Used (Pseudo-LRU)
+
+Performance readings:
+- Number of Cold Misses (Compulsary Misses)
+- Number of Capacity Misses 
+- Number of Conflict Misses
+- Number of Dirty-Blocks evicted

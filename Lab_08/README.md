@@ -1,6 +1,6 @@
 # Pipelined-Processor Simulator
 
-Simulates a 5-stage Pipelined Processor, with a given Cache system and Register File, consisting of 16 8-bit registers.
+Simulates a 5-stage Reduced Instruction Set Computer(RISC) Pipelined Processor, with a given Cache system and Register File, consisting of 16 8-bit registers.
 
 Cache system specifications: 
 - 256B Data Cache

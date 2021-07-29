@@ -127,14 +127,14 @@ class Cache{
                 cache.push_back(tempBlock);
                 vector<int> tempVector;
                 validTags.push_back(tempVector);
-                sizes.push_back(0);//why always pushing 0
+                sizes.push_back(0);
 	    	}
         }
 
         //returns the block pointer that points to the block preceding the block in the end of the set 
         CacheBlock* prevTail(int set){
             CacheBlock* tempNode = cache[set];
-            while(tempNode->next->next != NULL) tempNode = tempNode->next;//if only 1 element in list ?
+            while(tempNode->next->next != NULL) tempNode = tempNode->next;
             return tempNode;
         }
         void read(string s){
